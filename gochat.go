@@ -66,7 +66,12 @@ func sendChat(h pb.Handle, message string) {
 	   }
 	*****/
 
-	var req pb.ChatRequest
+	// var req pb.ChatRequest
+	var req =  pb.ChatRequest {
+		From: &ME,
+		To: &h,
+		Message: message,
+	}
 	// TODO-WORKSHOP: Create req struct of type pb.ChatRequest to send to client.Chat method
 
 	_, err = client.Chat(ctx, &req)
